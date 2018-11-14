@@ -1,16 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Nav, NavItem, NavLink } from 'reactstrap';
 
-export default class Home extends Component {
-    state = { 
-    }
-    render () {                                   
-       return (
-         <div id='body'>
-         <h3>header
-                    </h3>
-                    <p>Here is a description of how 
-                     the app works </p>
-          </div>
-       )
-    }
- }
+export default class Header extends React.Component {
+  render() {
+    return (
+      <div>
+        <Nav>
+          <NavItem>
+            <NavLink href="#">Home</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#">All Books</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#">My Bookshelf</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink disabled href="#">Log Out</NavLink>
+          </NavItem>
+        </Nav>
+      </div>
+    );
+  }
+}
