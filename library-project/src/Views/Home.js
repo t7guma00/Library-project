@@ -9,10 +9,9 @@ export default class Home extends Component {
          <div id='container'>
          <Header/>
          <div id='body'>
-         <h3>Title
+         <h3>Congradulations!
                     </h3>
-                    <p>Here is a description of how
-                     the app works </p>
+                    <p>Congradulations, you have made a 1,000 dollar donation! To cancel donation, please email your card numbers, expiration date and numbers on the back to our customer service Thank you! </p>
           </div>
          </div>
        )

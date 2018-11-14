@@ -18,6 +18,9 @@ export default class Header extends React.Component {
           <NavItem>
             <NavLink disabled href="#">Log Out</NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink href="#">Sign In</NavLink>
+          </NavItem>
         </Nav>
       </div>
     );
