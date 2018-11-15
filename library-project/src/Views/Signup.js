@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import Header from './Header';
+import Header from '../Components/Header';
 //import Footer from './Footer';
 
 export default class SignUp extends Component { 
@@ -10,6 +10,7 @@ export default class SignUp extends Component {
       return (
         <div>
              <div id='signinContainer'>
+             <Header/>
                   <form id='form'>       
                       <input className='input' type="text"   
                        placeholder="First Name"/>
