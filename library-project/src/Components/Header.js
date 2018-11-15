@@ -1,5 +1,5 @@
-import React from 'react';
-import { Nav, NavItem, NavLink } from 'reactstrap';
+import React from "react";
+import { Nav, NavItem, NavLink } from "reactstrap";
 
 export default class Header extends React.Component {
   render() {
@@ -10,13 +10,15 @@ export default class Header extends React.Component {
             <NavLink href="#">Home</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">All Books</NavLink>
+            <NavLink href="./allbooks">All Books</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="#">My Bookshelf</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink disabled href="#">Log Out</NavLink>
+            <NavLink disabled href="#">
+              Log Out
+            </NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="#">Sign In</NavLink>
