@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Header from "../Components/Header";
+//import Footer from '../Components/Footer';
 import axios from "axios";
 
 class AllBooks extends Component {
@@ -18,34 +19,35 @@ class AllBooks extends Component {
   }
   render() {
     return (
-      <div>
-        {(this.onload = this.getBooks())}
-        <table className="table table-bordered">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>ISBN</th>
-              <th>title</th>
-              <th>year</th>
-              <th>description</th>
-              <th>image</th>
-              <th>rating</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.books.map(book => (
-              <tr key={book.ID}>
-                <td>{book.ID}</td>
-                <td>{book.ISBN}</td>
-                <td>{book.title}</td>
-                <td>{book.year}</td>
-                <td>{book.description}</td>
-                <td>{book.image}</td>
-                <td>{book.rating}</td>
+      <div id="container">
+        <Header />
+        <div id="body">
+          {(this.onload = this.getBooks())}
+          <table className="table table-bordered">
+            <thead>
+              <tr>
+                <th>ISBN</th>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Rating</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {this.state.books.map(book => (
+                <tr key={book.ISBN}>
+                  <td>{book.ISBN}</td>
+                  <td>{book.title}</td>
+                  <td>{book.year}</td>
+                  <td>{book.description}</td>
+                  <td>{book.image}</td>
+                  <td>{book.rating}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }

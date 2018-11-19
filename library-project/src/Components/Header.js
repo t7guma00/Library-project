@@ -1,5 +1,5 @@
 import React from "react";
-import './Header.css'
+import "./Header.css";
 import { Nav, NavItem, NavLink } from "reactstrap";
 
 export default class Header extends React.Component {
@@ -28,8 +28,19 @@ export default class Header extends React.Component {
           <ul class="utilities">
             <li>
               <form>
-                <input class="search-input" type="text" id="search-query" placeholder="Search" name="q" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-haspopup="true" aria-controls="typeahead-dropdown-14" dir="ltr">
-                </input>
+                <input
+                  class="search-input"
+                  type="text"
+                  id="search-query"
+                  placeholder="Search"
+                  name="q"
+                  autocomplete="off"
+                  spellcheck="false"
+                  aria-autocomplete="list"
+                  aria-haspopup="true"
+                  aria-controls="typeahead-dropdown-14"
+                  dir="ltr"
+                />
               </form>
             </li>
           </ul>
