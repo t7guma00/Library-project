@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import AllBooks from "./Views/AllBooks";
-import Home from "./Views/Home";
-import SignIn from "./Components/signin";
-import SignUp from "./Components/signup";
 
 import Books from './Views/Books' ;
 import Home from './Views/Home' ;

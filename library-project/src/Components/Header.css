@@ -1,0 +1,91 @@
+body {
+  background: #eaeaea;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.wrapper {
+  text-align: center;
+  width: auto;
+}
+
+header {
+  background: #fff;
+  height: 35px;
+  padding: 1em 2em 0 2em;
+  width: auto;
+}
+
+ul { list-style: none; }
+
+li {
+  display: inline;
+  overflow: hidden;
+  text-align: center;
+  width: 100px;
+}
+
+header li a {
+  color: #66757f;
+  text-decoration: none;
+}
+
+header li a:hover {
+ color: #fb8805;
+ text-decoration: none;
+}
+
+nav[role="navigation"] {
+  background: transparent;
+  float: left;
+}
+
+ul { float: left; }
+
+/* // List item */
+
+header li a {
+  border-bottom: 4px solid transparent;
+  padding: 0 15px 9px 15px;
+  transition: color .15s ease-in-out;
+}
+
+header li a:hover {
+  border-bottom: 4px solid #fb8805;
+  padding: 0 15px 7px 15px;
+  transition: padding .15s ease-in-out;
+}
+
+.utilities {
+  display: inline-block;
+  float: right;
+}
+
+.utilities li { margin-right: 1em; }
+
+/* // Form */
+.utilities form {
+  bottom: 8px;
+  display: inline-block;
+  position: relative;
+}
+
+.utilities form input {
+  background: #66757f;
+  border: none;
+  height: 30px;
+  padding: 0 1em;
+  width: 180px;
+  border-radius: 21px;
+}
+
+/* // Active state */
+.active {
+  border-bottom: 4px solid #fb8805;
+  padding: 0 0 7px 0;
+}
+
+.active:hover {
+  border: none;
+  padding: 0 0 7px 0;
+  transition: padding 0s ease-in-out;
+}

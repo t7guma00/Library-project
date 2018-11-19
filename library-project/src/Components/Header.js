@@ -1,25 +1,40 @@
 import React from "react";
+import './Header.css'
 import { Nav, NavItem, NavLink } from "reactstrap";
 
 export default class Header extends React.Component {
   render() {
     return (
-      <div>
-        <Nav>
-          <NavItem>
-            <NavLink href="/">Home</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/AllBooks">All Books</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href='/signin'>Sign In</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href='/signup'>Sign Up</NavLink>
-          </NavItem>
-        </Nav>
-      </div>
+      <header>
+        <div class="wrapper">
+          <nav role="navigation">
+            <ul>
+              <li class="active">
+                <a href="#" class="active">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#">Books</a>
+              </li>
+              <li>
+                <a href="#">My Bookshelf</a>
+              </li>
+              <li>
+                <a href="#">About us</a>
+              </li>
+            </ul>
+          </nav>
+          <ul class="utilities">
+            <li>
+              <form>
+                <input class="search-input" type="text" id="search-query" placeholder="Search" name="q" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-haspopup="true" aria-controls="typeahead-dropdown-14" dir="ltr">
+                </input>
+              </form>
+            </li>
+          </ul>
+        </div>
+      </header>
     );
   }
 }
