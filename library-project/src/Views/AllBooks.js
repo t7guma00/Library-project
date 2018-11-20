@@ -41,7 +41,9 @@ class AllBooks extends Component {
                   <td>{book.title}</td>
                   <td>{book.year}</td>
                   <td>{book.description}</td>
-                  <td>{book.image}</td>
+                  <td>
+                    <img src={book.image} height="165" width="110" />
+                  </td>
                   <td>{book.rating}</td>
                 </tr>
               ))}

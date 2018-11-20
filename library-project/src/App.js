@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import AllBooks from "./Views/AllBooks";
 import AddBook from "./Components/AddBook";
-import Books from "./Views/Books";
+import UpdateBook from "./Components/UpdateBook";
+import Tools from "./Views/Tools";
 import Home from "./Views/Home";
 import SignIn from "./Views/Signin";
 import SignUp from "./Views/Signup";
@@ -57,6 +58,24 @@ class App extends Component {
             render={() => (
               <div className="App">
                 <AddBook />
+              </div>
+            )}
+          />
+          <Route
+            exact={true}
+            path="/updatebook"
+            render={() => (
+              <div className="App">
+                <UpdateBook />
+              </div>
+            )}
+          />
+          <Route
+            exact={true}
+            path="/tools"
+            render={() => (
+              <div className="App">
+                <Tools />
               </div>
             )}
           />
