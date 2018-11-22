@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "../Components/Header";
 import AddBook from "../Components/AddBook";
 import UpdateBook from "../Components/UpdateBook";
+import DeleteBook from "../Components/DeleteBook";
 //import Footer from '../Components/Footer';
 
 class Tools extends Component {
@@ -17,6 +18,10 @@ class Tools extends Component {
 
           <p>
             <UpdateBook />
+          </p>
+
+          <p>
+            <DeleteBook />
           </p>
         </div>
       </div>

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
-import AllBooks from "./Views/AllBooks";
+import BookList from "./Components/BookList";
 import AddBook from "./Components/AddBook";
 import UpdateBook from "./Components/UpdateBook";
+import DeleteBook from "./Components/DeleteBook";
+import Books from "./Views/Books";
 import Tools from "./Views/Tools";
 import Home from "./Views/Home";
 import SignIn from "./Views/Signin";
@@ -45,10 +47,19 @@ class App extends Component {
           />
           <Route
             exact={true}
-            path="/allbooks"
+            path="/booklist"
             render={() => (
               <div className="App">
-                <AllBooks />
+                <BookList />
+              </div>
+            )}
+          />
+          <Route
+            exact={true}
+            path="/books"
+            render={() => (
+              <div className="App">
+                <Books />
               </div>
             )}
           />
@@ -67,6 +78,15 @@ class App extends Component {
             render={() => (
               <div className="App">
                 <UpdateBook />
+              </div>
+            )}
+          />
+          <Route
+            exact={true}
+            path="/deletebook"
+            render={() => (
+              <div className="App">
+                <DeleteBook />
               </div>
             )}
           />

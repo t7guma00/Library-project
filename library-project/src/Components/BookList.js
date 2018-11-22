@@ -3,7 +3,7 @@ import Header from "../Components/Header";
 //import Footer from '../Components/Footer';
 import axios from "axios";
 
-class AllBooks extends Component {
+class BookList extends Component {
   constructor() {
     super();
     this.getBooks = this.getBooks.bind(this);
@@ -42,7 +42,12 @@ class AllBooks extends Component {
                   <td>{book.year}</td>
                   <td>{book.description}</td>
                   <td>
-                    <img src={book.image} height="165" width="110" />
+                    <img
+                      src={book.image}
+                      alt="Book Cover"
+                      height="165"
+                      width="110"
+                    />
                   </td>
                   <td>{book.rating}</td>
                 </tr>
@@ -53,6 +58,23 @@ class AllBooks extends Component {
       </div>
     );
   }
+
+  /** render() {
+    return (
+      <div id="container">
+        <div id="">
+          {(this.onload = this.getBooks())}
+          {this.state.books.map(book => (
+            <p>
+              {book.ISBN} {book.title} {book.year}{" "}
+              <img src={book.image} alt="Book Cover" height="165" width="110" />{" "}
+              {book.rating}{" "}
+            </p>
+          ))}
+        </div>
+      </div>
+    );
+  }*/
 }
 
-export default AllBooks;
+export default BookList;

@@ -42,7 +42,7 @@ class AddBook extends Component {
       .then(res => {
         console.log(res);
         console.log(res.data);
-        this.props.history.push("/allbooks");
+        this.props.history.push("/books");
       });
   };
 
@@ -100,7 +100,7 @@ class AddBook extends Component {
                 </tr>
                 <tr>
                   <td width="80px">
-                    <label>Image:</label>
+                    <label>Image URL:</label>
                   </td>
                   <td>
                     <input type="text" name="image" onChange={this.onChange} />

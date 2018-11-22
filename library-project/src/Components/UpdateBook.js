@@ -59,7 +59,7 @@ class UpdateBook extends Component {
         rating
       })
       .then(res => {
-        this.props.history.push("/allbooks");
+        this.props.history.push("/books");
       });
   };
 
@@ -92,7 +92,7 @@ class UpdateBook extends Component {
               <tbody>
                 <tr>
                   <td width="80px">
-                    <label>ISBN</label>
+                    <label>ISBN:</label>
                   </td>
                   <td>
                     <input
@@ -105,7 +105,7 @@ class UpdateBook extends Component {
                 </tr>
                 <tr>
                   <td width="80px">
-                    <label>Title</label>
+                    <label>Title:</label>
                   </td>
                   <td>
                     <input
@@ -118,7 +118,7 @@ class UpdateBook extends Component {
                 </tr>
                 <tr>
                   <td width="80px">
-                    <label>Year</label>
+                    <label>Year:</label>
                   </td>
                   <td>
                     <input
@@ -131,7 +131,7 @@ class UpdateBook extends Component {
                 </tr>
                 <tr>
                   <td>
-                    <label>Description</label>
+                    <label>Description:</label>
                   </td>
                   <td>
                     <input
@@ -144,7 +144,7 @@ class UpdateBook extends Component {
                 </tr>
                 <tr>
                   <td>
-                    <label>Image</label>
+                    <label>Image URL:</label>
                   </td>
                   <td>
                     <input
@@ -157,7 +157,7 @@ class UpdateBook extends Component {
                 </tr>
                 <tr>
                   <td width="80px">
-                    <label>Rating</label>
+                    <label>Rating:</label>
                   </td>
                   <td>
                     <input
