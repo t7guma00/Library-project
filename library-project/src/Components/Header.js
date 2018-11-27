@@ -1,16 +1,15 @@
 import React from "react";
 import "./Header.css";
-import { Nav, NavItem, NavLink } from "reactstrap";
 
 export default class Header extends React.Component {
   render() {
     return (
       <header>
-        <div class="wrapper">
+        <div className="wrapper">
           <nav role="navigation">
             <ul>
-              <li class="active">
-                <a href="#" class="active">
+              <li className="active">
+                <a href="#" className="active">
                   Home
                 </a>
               </li>
@@ -28,11 +27,11 @@ export default class Header extends React.Component {
               </li>
             </ul>
           </nav>
-          <ul class="utilities">
+          <ul className="utilities">
             <li>
               <form>
                 <input
-                  class="search-input"
+                  className="search-input"
                   type="text"
                   id="search-query"
                   placeholder="Search"
