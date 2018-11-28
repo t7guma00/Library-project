@@ -15,10 +15,12 @@ class Tools extends Component {
           <p>
             <AddBook />
           </p>
+          <hr />
 
           <p>
             <UpdateBook />
           </p>
+          <hr />
 
           <p>
             <DeleteBook />

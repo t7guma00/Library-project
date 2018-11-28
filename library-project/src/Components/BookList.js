@@ -20,7 +20,6 @@ class BookList extends Component {
   render() {
     return (
       <div id="container">
-        <Header />
         <div id="body">
           {(this.onload = this.getBooks())}
           <table className="table table-bordered">
@@ -58,23 +57,6 @@ class BookList extends Component {
       </div>
     );
   }
-
-  /** render() {
-    return (
-      <div id="container">
-        <div id="">
-          {(this.onload = this.getBooks())}
-          {this.state.books.map(book => (
-            <p>
-              {book.ISBN} {book.title} {book.year}{" "}
-              <img src={book.image} alt="Book Cover" height="165" width="110" />{" "}
-              {book.rating}{" "}
-            </p>
-          ))}
-        </div>
-      </div>
-    );
-  }*/
 }
 
 export default BookList;
