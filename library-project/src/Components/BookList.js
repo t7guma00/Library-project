@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Header from "../Components/Header";
 //import Footer from '../Components/Footer';
 import axios from "axios";
+import "./Booklist.css";
+
 
 class BookList extends Component {
   constructor() {
@@ -20,40 +22,23 @@ class BookList extends Component {
   render() {
     return (
       <div id="container">
-        <Header />
         <div id="body">
           {(this.onload = this.getBooks())}
-          <table className="table table-bordered">
-            <thead>
-              <tr>
-                <th>ISBN</th>
-                <th>Title</th>
-                <th>Year</th>
-                <th>Description</th>
-                <th>Image</th>
-                <th>Rating</th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.state.books.map(book => (
-                <tr key={book.ISBN}>
-                  <td>{book.ISBN}</td>
-                  <td>{book.title}</td>
-                  <td>{book.year}</td>
-                  <td>{book.description}</td>
-                  <td>
-                    <img
+            {this.state.books.map(book => (
+                  <div className="person" key={book.ISBN}>
+                    <h1>{book.ISBN}</h1>
+                    <h1>{book.title}</h1>
+                    <h1>{book.year}</h1>
+                    <h1>{book.description}</h1>
+                  1 <img
                       src={book.image}
                       alt="Book Cover"
                       height="165"
                       width="110"
                     />
-                  </td>
-                  <td>{book.rating}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                    <h1>{book.rating}</h1>
+                  </div>
+                ))}
         </div>
       </div>
     );
