@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Header from "../Components/Header";
+//import Header from "../Components/Header";
 //import Footer from '../Components/Footer';
 import axios from "axios";
 import "./Booklist.css";
@@ -22,23 +22,25 @@ class BookList extends Component {
   render() {
     return (
       <div id="container">
-        <div id="body">
+        <div className="body">
+          <div className="bcontainer">
           {(this.onload = this.getBooks())}
             {this.state.books.map(book => (
                   <div className="person" key={book.ISBN}>
-                    <h1>{book.ISBN}</h1>
-                    <h1>{book.title}</h1>
-                    <h1>{book.year}</h1>
-                    <h1>{book.description}</h1>
+                    <h2>{book.ISBN}</h2>
+                    <h2>{book.title}</h2>
+                    <h2>{book.year}</h2>
+                    <h2>{book.description}</h2>
                   1 <img
                       src={book.image}
                       alt="Book Cover"
                       height="165"
                       width="110"
                     />
-                    <h1>{book.rating}</h1>
+                    <h2>{book.rating}</h2>
                   </div>
                 ))}
+          </div>
         </div>
       </div>
     );
