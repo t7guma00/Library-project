@@ -1,5 +1,4 @@
 .bcontainer {
-  height: 125px;
   text-align: justify;
   font-size: 0.1px; /* IE 9/10 don't like font-size: 0; */
   min-width: 600px;
@@ -12,6 +11,8 @@
   width: 300px;
   padding: 30px;
   margin-left: 3%;
+  height: 250px;
+
 }
 .bcontainer:after {
   content: '';
