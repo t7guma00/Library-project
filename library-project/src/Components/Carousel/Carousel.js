@@ -11,7 +11,8 @@ class Carousel extends Component {
     super();
     this.getBooks = this.getBooks.bind(this);
     this.state = {
-      books: []
+      books: [],
+      index: 0
     };
   }
   getBooks() {
@@ -20,19 +21,44 @@ class Carousel extends Component {
       this.setState({ books });
     });
   }
+  switchToAnotherCard = (direction) => {
+    let newIndex;
+    if (direction) {
+      newIndex = this.state.index + 1;
+      if (newIndex > this.state.books.length - 1) 
+      {
+        newIndex = 0;
+      }
+    } else {
+      newIndex = this.state.index - 1;
+      if (newIndex < 0) 
+      {
+        newIndex = this.state.books.length - 1;
+      }
+    }
+    this.setState({
+      index: newIndex
+    })
+  }
   render() {
     return (
       <div className="Carousel">
         <div className="page">
             <div className="col">
               <div className={`cards-slider active-slide`}>
-                <div className="cards-slider-wrapper">
-                  {(this.onload = this.getBooks())}
+                {(this.onload = this.getBooks())}
+                <div className="cards-slider-wrapper" style={{
+                  'transform': `translateX(-${this.state.index*(100/this.state.books.length)}%)`
+                }}>
                   {
                     this.state.books.map(book => <Card key={book.ID} book={book}/> )
                   }
                 </div>
               </div>
+            </div>
+            <div className="carousel-controls" >
+                <button onClick={() => this.switchToAnotherCard(true)}>Next</button>
+                <button onClick={() => this.switchToAnotherCard(false)}>Prev</button>
             </div>
         </div>
       </div>
