@@ -4,7 +4,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./Booklist.css";
 
-
 class BookList extends Component {
   constructor() {
     super();
@@ -24,22 +23,22 @@ class BookList extends Component {
       <div id="container">
         <div className="body">
           <div className="bcontainer">
-          {(this.onload = this.getBooks())}
+            {(this.onload = this.getBooks())}
             {this.state.books.map(book => (
-                  <div className="person" key={book.ISBN}>
-                    <h2>{book.ISBN}</h2>
-                    <h2>{book.title}</h2>
-                    <h2>{book.year}</h2>
-                    <h2>{book.description}</h2>
-                  1 <img
-                      src={book.image}
-                      alt="Book Cover"
-                      height="165"
-                      width="110"
-                    />
-                    <h2>{book.rating}</h2>
-                  </div>
-                ))}
+              <div className="person" key={book.ISBN}>
+                <img
+                  src={book.image}
+                  alt="Book Cover"
+                  height="165"
+                  width="110"
+                />
+                <h5>Title: {book.title}</h5>
+                <h5>ISBN: {book.ISBN}</h5>
+                <h5>Year: {book.year}</h5>
+                <h5>Description: {book.description}</h5>
+                <h5>{book.rating} out of 5</h5>
+              </div>
+            ))}
           </div>
         </div>
       </div>
