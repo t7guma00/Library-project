@@ -20,6 +20,25 @@ router.get("/:ID?", function(req, res, next) {
     });
   }
 });
+router.get("/:ID?", function(req, res, next) {
+  if (req.params.ID) {
+    books.getTitle(req.params.ID, title, function(err, rows) {
+      if (err) {
+        res.json(err);
+      } else {
+        res.json(rows);
+      }
+    });
+  } else {
+    books.getAllbooks(function(err, rows) {
+      if (err) {
+        res.json(err);
+      } else {
+        res.json(rows);
+      }
+    });
+  }
+});
 router.post("/", function(req, res, next) {
   books.addbook(req.body, function(err, count) {
     if (err) {
