@@ -1,4 +1,5 @@
 var express = require("express");
+var session = require('express-session')
 var path = require("path");
 var logger = require("morgan");
 var cookieParser = require("cookie-parser");
@@ -46,6 +47,35 @@ if (app.get("env") === "development") {
     });
   });
 }
+// login system
+
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 10000 }
+}));
+
+app.use(function (req, res, next) {
+  if (!req.session.myuser) {
+    
+    req.session.myuser={}
+    req.session.myuser['userid']=0
+  }
+ 
+  
+  next()
+});
+app.use(function (req, res, next) {
+  if (!req.session.myuser) {
+    
+    req.session.myuser={}
+    req.session.myuser['userid']=110
+  }
+ 
+  
+  next()
+});
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {

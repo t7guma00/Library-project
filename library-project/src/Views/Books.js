@@ -11,15 +11,14 @@ class Books extends Component {
       <div>
         <Header />
         <br />
-        <div className="image">
-          <img src={img}
-          width="1350" >
-          </img>
+        <div className="banner">
+          <div className="banner-image-container">
+            <img src={img} />
+          </div>
         </div>
         <br />
         <br />
         <BookList />
-        <Carousel />
       </div>
     );
   }

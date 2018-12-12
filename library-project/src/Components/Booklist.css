@@ -1,9 +1,24 @@
+.bcontainer{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.personcontainer{
+  display: inline-flex;
+  width: 33%;
+  position: relative;
+}
 .person {
-  display: inline-block;
   border: 1px solid #eee;
   border-radius: 8px;
   box-shadow: 0 2px 2px #ccc;
-  width: 300px;
-  padding: 30px;
   margin-left: 3%;
+  padding: 30px;
+  width: 100%;
+  text-align: center;
+}
+.bookcover {
+  text-align: center;
 }

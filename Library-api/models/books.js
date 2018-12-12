@@ -15,6 +15,7 @@ var books = {
         books.title,
         books.year,
         books.description,
+        books.author,
         books.image,
         books.rating
       ],
@@ -32,6 +33,7 @@ var books = {
         books.title,
         books.year,
         books.description,
+        books.author,
         books.image,
         books.rating,
         ID
