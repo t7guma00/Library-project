@@ -3,6 +3,7 @@ import React, { Component } from "react";
 //import Footer from '../Components/Footer';
 import axios from "axios";
 import "./Booklist.css";
+import { NavLink } from "react-router-dom";
 
 class BookList extends Component {
   constructor() {
@@ -11,6 +12,7 @@ class BookList extends Component {
     this.state = {
       books: []
     };
+    this.getBooks();
   }
   getBooks() {
     axios.get(`http://localhost:3000/books`).then(res => {
@@ -36,7 +38,11 @@ class BookList extends Component {
                 <h5>ISBN: {book.ISBN}</h5>
                 <h5>Year: {book.year}</h5>
                 <h5>Description: {book.description}</h5>
-                <h5>{book.rating} out of 5</h5>
+                <h5>Rating: {book.rating} out of 5</h5>
+                <br />
+                <NavLink to={`selectedbook/${book.ID}`}>
+                  <button className="btn">More information</button>
+                </NavLink>
               </div>
             ))}
           </div>

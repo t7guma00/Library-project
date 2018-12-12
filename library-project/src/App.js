@@ -10,6 +10,7 @@ import Home from "./Views/Home";
 import SignIn from "./Views/Signin";
 import SignUp from "./Views/Signup";
 import About from "./Views/About";
+import SelectedBook from "./Components/SelectedBook";
 
 import { BrowserRouter, Route } from "react-router-dom";
 
@@ -105,6 +106,15 @@ class App extends Component {
             render={() => (
               <div className="App">
                 <About />
+              </div>
+            )}
+          />
+          <Route
+            exact={true}
+            path="/selectedbook/:id"
+            render={() => (
+              <div className="App">
+                <SelectedBook />
               </div>
             )}
           />
