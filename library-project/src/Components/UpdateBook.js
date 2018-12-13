@@ -161,8 +161,10 @@ class UpdateBook extends Component {
                   </td>
                   <td>
                     <input
-                      type="text"
+                      type="number"
                       name="rating"
+                      min="1"
+                      max="5"
                       value={this.state.rating}
                       onChange={this.onChange}
                     />

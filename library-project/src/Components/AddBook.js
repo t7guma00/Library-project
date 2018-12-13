@@ -114,6 +114,8 @@ class AddBook extends Component {
                     <input
                       type="number"
                       name="rating"
+                      min="1"
+                      max="5"
                       onChange={this.onChange}
                     />
                   </td>
