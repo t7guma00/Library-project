@@ -11,7 +11,6 @@ import SignIn from "./Views/Signin";
 import SignUp from "./Views/Signup";
 import About from "./Views/About";
 import SelectedBook from "./Components/SelectedBook";
-
 import { BrowserRouter, Route } from "react-router-dom";
 
 class App extends Component {
@@ -109,15 +108,8 @@ class App extends Component {
               </div>
             )}
           />
-          <Route
-            exact={true}
-            path="/selectedbook/:id"
-            render={() => (
-              <div className="App">
-                <SelectedBook />
-              </div>
-            )}
-          />
+
+          <Route path="/selectedbook/:id" exact component={SelectedBook} />
         </div>
       </BrowserRouter>
     );

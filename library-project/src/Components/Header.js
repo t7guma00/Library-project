@@ -14,16 +14,16 @@ export default class Header extends React.Component {
                 </a>
               </li>
               <li>
-                <a href="books">Books</a>
+                <a href="../books">Books</a>
               </li>
               <li>
                 <a href="#">My Bookshelf</a>
               </li>
               <li>
-                <a href="about">About us</a>
+                <a href="../about">About us</a>
               </li>
               <li>
-                <a href="tools">Admin tools</a>
+                <a href="../tools">Admin tools</a>
               </li>
             </ul>
           </nav>

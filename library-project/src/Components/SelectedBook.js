@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Header from "../Components/Header";
 
 class SelectedBook extends Component {
   constructor(props) {
@@ -21,45 +22,42 @@ class SelectedBook extends Component {
 
   render() {
     return (
-      <div className="container">
-        <table className="table">
-          <thead />
-          <tbody>
-            {this.state.books.map(book => (
-              <tr key={book.ID}>
-                <h2>More information about {book.title}</h2>
-                <tr>
-                  <th>ID:</th>
-                  <td>{book.ID}</td>
+      <div className="display">
+        <Header />
+        <div className="container">
+          <table className="table">
+            <thead />
+            <tbody>
+              {this.state.books.map(book => (
+                <tr key={book.ISBN}>
+                  <h2>More information about {book.title}</h2>
+                  <tr>
+                    <th>ISBN:</th>
+                    <td>{book.ISBN}</td>
+                  </tr>
+                  <tr>
+                    <th>Year:</th>
+                    <td>{book.year}</td>
+                  </tr>
+                  <tr>
+                    <th>Description:</th>
+                    <td>{book.description}</td>
+                  </tr>
+                  <tr>
+                    <th>Book Cover:</th>
+                    <td>
+                      <img src={book.image} />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Rating:</th>
+                    <td>{book.rating} out of 5</td>
+                  </tr>
                 </tr>
-                <tr>
-                  <th>ISBN:</th>
-                  <td>{book.ISBN}</td>
-                </tr>
-                <tr>
-                  <th>Title:</th>
-                  <td>{book.title}</td>
-                </tr>
-                <tr>
-                  <th>Year:</th>
-                  <td>{book.year}</td>
-                </tr>
-                <tr>
-                  <th>Description:</th>
-                  <td>{book.description}</td>
-                </tr>
-                <tr>
-                  <th>Image:</th>
-                  <td>{book.image}</td>
-                </tr>
-                <tr>
-                  <th>Rating:</th>
-                  <td>{book.rating}</td>
-                </tr>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }
