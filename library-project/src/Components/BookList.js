@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-//import Header from "../Components/Header";
-//import Footer from '../Components/Footer';
 import axios from "axios";
 import "./Booklist.css";
 import { NavLink } from "react-router-dom";

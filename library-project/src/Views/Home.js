@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Header from "../Components/Header";
-//import Footer from '../Components/Footer';
+import Footer from '../Components/Footer';
 import img from "./image.png";
 import "./Home.css";
+import Carousel from "../Components/Carousel.js";
 
 export default class Home extends Component {
   state = {};
@@ -13,7 +14,12 @@ export default class Home extends Component {
         <div className="image">
           <img src={img} width="1350" />
         </div>
-        <div id="body" />
+        <br />
+        <div id="body">
+        <h3 id="myh3"> Recommended books:</h3>
+        <Carousel />
+        <Footer />
+        </div>
       </div>
     );
   }

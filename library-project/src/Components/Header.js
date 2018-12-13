@@ -23,9 +23,6 @@ export default class Header extends React.Component {
                 <a href="../about">About us</a>
               </li>
               <li>
-                <a href="../tools">Admin tools</a>
-              </li>
-              <li>
                 <a href="../register">Register</a>
               </li>
               <li>

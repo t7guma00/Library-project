@@ -4,17 +4,16 @@ import PropTypes from "prop-types";
 const Card = ({ book }) => {
   return (
     <div id={`card`} className="card">
-      <img src={book.image} alt={book.title} height="165" width="110" />
+      <img src={book.image} alt={book.title} height="330" width="220" />
       <div className="details">
         <span className="index" />
         <p className="location">
           {book.title}
           <br />
+          {book.author}
+          <br />
           {book.year}
         </p>
-        <ul className="features">
-          <li className="icon-bed">{book.description}</li>
-        </ul>
       </div>
     </div>
   );

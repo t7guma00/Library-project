@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Header from "../Components/Header";
+import Header from "./Header";
 
 class SelectedBook extends Component {
   constructor(props) {
