@@ -1,5 +1,5 @@
 var express = require("express");
-var session = require('express-session')
+var session = require("express-session");
 var path = require("path");
 var logger = require("morgan");
 var cookieParser = require("cookie-parser");
@@ -8,9 +8,8 @@ var cors = require("cors");
 var routes = require("./routes/index");
 var books = require("./routes/books");
 var authors = require("./routes/authors");
-var categories = require("./routes/categories");
+var user = require("./routes/user");
 var app = express();
-
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
@@ -28,7 +27,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", routes);
 app.use("/books", books);
 app.use("/authors", authors);
-app.use("/categories", categories);
+app.use("/user", user);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error("Not Found");
@@ -49,32 +48,30 @@ if (app.get("env") === "development") {
 }
 // login system
 
-app.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { maxAge: 10000 }
-}));
+app.use(
+  session({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 10000 }
+  })
+);
 
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   if (!req.session.myuser) {
-    
-    req.session.myuser={}
-    req.session.myuser['userid']=0
+    req.session.myuser = {};
+    req.session.myuser["userid"] = 0;
   }
- 
-  
-  next()
+
+  next();
 });
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   if (!req.session.myuser) {
-    
-    req.session.myuser={}
-    req.session.myuser['userid']=110
+    req.session.myuser = {};
+    req.session.myuser["userid"] = 110;
   }
- 
-  
-  next()
+
+  next();
 });
 // production error handler
 // no stacktraces leaked to user

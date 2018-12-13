@@ -12,6 +12,7 @@ import SignUp from "./Views/Signup";
 import About from "./Views/About";
 import SelectedBook from "./Components/SelectedBook";
 import { BrowserRouter, Route } from "react-router-dom";
+import Register from "./Components/Register";
 
 class App extends Component {
   render() {
@@ -105,6 +106,15 @@ class App extends Component {
             render={() => (
               <div className="App">
                 <About />
+              </div>
+            )}
+          />
+          <Route
+            exact={true}
+            path="/register"
+            render={() => (
+              <div className="App">
+                <Register />
               </div>
             )}
           />

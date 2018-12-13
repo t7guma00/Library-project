@@ -1,9 +1,9 @@
 var express = require("express");
 var router = express.Router();
-var categories = require("../models/categories");
+var user = require("../models/user");
 router.get("/:ID?", function(req, res, next) {
   if (req.params.ID) {
-    categories.getcategoryByID(req.params.ID, function(err, rows) {
+    user.getuserByID(req.params.ID, function(err, rows) {
       if (err) {
         res.json(err);
       } else {
@@ -11,7 +11,7 @@ router.get("/:ID?", function(req, res, next) {
       }
     });
   } else {
-    categories.getAllcategories(function(err, rows) {
+    user.getAllusers(function(err, rows) {
       if (err) {
         res.json(err);
       } else {
@@ -21,7 +21,7 @@ router.get("/:ID?", function(req, res, next) {
   }
 });
 router.post("/", function(req, res, next) {
-  categories.addcategory(req.body, function(err, count) {
+  user.adduser(req.body, function(err, count) {
     if (err) {
       res.json(err);
     } else {
@@ -30,7 +30,7 @@ router.post("/", function(req, res, next) {
   });
 });
 router.delete("/:ID", function(req, res, next) {
-  categories.deletecategory(req.params.ID, function(err, count) {
+  user.deleteuser(req.params.ID, function(err, count) {
     if (err) {
       res.json(err);
     } else {
@@ -39,7 +39,7 @@ router.delete("/:ID", function(req, res, next) {
   });
 });
 router.put("/:ID", function(req, res, next) {
-  categories.updatecategory(req.params.ID, req.body, function(err, rows) {
+  user.updateuser(req.params.ID, req.body, function(err, rows) {
     if (err) {
       res.json(err);
     } else {

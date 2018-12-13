@@ -25,6 +25,12 @@ export default class Header extends React.Component {
               <li>
                 <a href="../tools">Admin tools</a>
               </li>
+              <li>
+                <a href="../register">Register</a>
+              </li>
+              <li>
+                <a href="../login">Log in</a>
+              </li>
             </ul>
           </nav>
           <ul className="utilities">
