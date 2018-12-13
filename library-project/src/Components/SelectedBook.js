@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
 
 class SelectedBook extends Component {
   constructor(props) {
     super(props);
-    this.routeParam = props.match.params.ID;
+    this.routeParam = props.match.params.id;
     this.getBook = this.getBook.bind(this);
     this.state = {
       books: []
     };
-    this.getBook(this.props.match.params.ID);
+    this.getBook(this.props.match.params.id);
   }
 
   getBook(ID) {
@@ -23,12 +22,12 @@ class SelectedBook extends Component {
   render() {
     return (
       <div className="container">
-        <h2>Selected Book</h2>
         <table className="table">
           <thead />
           <tbody>
             {this.state.books.map(book => (
               <tr key={book.ID}>
+                <h2>More information about {book.title}</h2>
                 <tr>
                   <th>ID:</th>
                   <td>{book.ID}</td>
@@ -61,12 +60,6 @@ class SelectedBook extends Component {
             ))}
           </tbody>
         </table>
-        <NavLink to={`/updatebook/${this.props.match.params.id}`}>
-          <button className="btn btn-primary">Update</button>
-        </NavLink>
-        <NavLink to={`/deleteselected/${this.props.match.params.id}`}>
-          <button className="btn btn-danger">Delete</button>
-        </NavLink>
       </div>
     );
   }

@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./Booklist.css";
 import { NavLink } from "react-router-dom";
+import star from "./star.png";
 
 class BookList extends Component {
   constructor() {
@@ -27,21 +28,28 @@ class BookList extends Component {
           <div className="bcontainer">
             {(this.onload = this.getBooks())}
             {this.state.books.map(book => (
-                  <div className="personcontainer">
-                  <div className="person" key={book.ISBN}>
-                  <img className ="bookcover"
-                      src={book.image}
-                      alt="Book Cover"
-                      height="330"
-                      width="220"
-                   />
-                    <h4>{book.author}</h4>
-                    <h3>{book.title}</h3>
-                    <h5>{book.year}</h5>
-                    <h5>{book.rating}</h5>
-                  </div>
-                  </div>
-                ))}
+              <div className="personcontainer">
+                <div className="person" key={book.ISBN}>
+                  <img
+                    className="bookcover"
+                    src={book.image}
+                    alt="Book Cover"
+                    height="330"
+                    width="220"
+                  />
+                  <h4>{book.author}</h4>
+                  <h3>{book.title}</h3>
+                  <h5>{book.year}</h5>
+                  <h5>
+                    {book.rating} <img src={star} height="22" width="22" />
+                  </h5>
+                  <br />
+                  <NavLink to={`selectedbook/${book.ID}`}>
+                    <button className="btn">More Information</button>
+                  </NavLink>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
