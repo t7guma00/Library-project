@@ -45,7 +45,7 @@ class DeleteBook extends Component {
                 <input type="number" onChange={this.updateInputValue} min="1" />
                 <td />
                 <td>
-                  <button className="button" onClick={this.delete}>
+                  <button className="btn" onClick={this.delete}>
                     Delete
                   </button>
                 </td>

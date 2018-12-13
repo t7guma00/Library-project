@@ -13,6 +13,7 @@ class AddBook extends Component {
       title: "",
       year: "",
       description: "",
+      author: "",
       image: "",
       rating: ""
     };
@@ -27,7 +28,16 @@ class AddBook extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    const { ID, ISBN, title, year, description, image, rating } = this.state;
+    const {
+      ID,
+      ISBN,
+      title,
+      year,
+      description,
+      author,
+      image,
+      rating
+    } = this.state;
 
     axios
       .post("http://localhost:3000/books", {
@@ -36,6 +46,7 @@ class AddBook extends Component {
         title,
         year,
         description,
+        author,
         image,
         rating
       })
@@ -100,6 +111,14 @@ class AddBook extends Component {
                 </tr>
                 <tr>
                   <td width="80px">
+                    <label>Author:</label>
+                  </td>
+                  <td>
+                    <input type="text" name="author" onChange={this.onChange} />
+                  </td>
+                </tr>
+                <tr>
+                  <td width="80px">
                     <label>Image URL:</label>
                   </td>
                   <td>
@@ -116,6 +135,7 @@ class AddBook extends Component {
                       name="rating"
                       min="1"
                       max="5"
+                      step=".01"
                       onChange={this.onChange}
                     />
                   </td>
@@ -123,7 +143,7 @@ class AddBook extends Component {
                 <tr>
                   <td />
                   <td>
-                    <button className="button" type="submit">
+                    <button className="btn" type="submit">
                       Add Book
                     </button>
                   </td>

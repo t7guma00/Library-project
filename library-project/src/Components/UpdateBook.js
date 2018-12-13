@@ -15,6 +15,7 @@ class UpdateBook extends Component {
       Title: "",
       Year: "",
       Description: "",
+      Author: "",
       Image: "",
       Rating: ""
     };
@@ -33,6 +34,7 @@ class UpdateBook extends Component {
         title: res.data[0].title,
         year: res.data[0].year,
         description: res.data[0].description,
+        author: res.data[0].author,
         image: res.data[0].image,
         rating: res.data[0].rating
       };
@@ -47,7 +49,15 @@ class UpdateBook extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const id = this.state.ID;
-    const { ISBN, title, year, description, image, rating } = this.state;
+    const {
+      ISBN,
+      title,
+      year,
+      description,
+      author,
+      image,
+      rating
+    } = this.state;
 
     axios
       .put("http://localhost:3000/books/" + id, {
@@ -55,6 +65,7 @@ class UpdateBook extends Component {
         title,
         year,
         description,
+        author,
         image,
         rating
       })
@@ -144,6 +155,19 @@ class UpdateBook extends Component {
                 </tr>
                 <tr>
                   <td>
+                    <label>Author:</label>
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="author"
+                      onChange={this.onChange}
+                      value={this.state.author}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     <label>Image URL:</label>
                   </td>
                   <td>
@@ -165,6 +189,7 @@ class UpdateBook extends Component {
                       name="rating"
                       min="1"
                       max="5"
+                      step=".01"
                       value={this.state.rating}
                       onChange={this.onChange}
                     />
@@ -173,7 +198,7 @@ class UpdateBook extends Component {
                 <tr>
                   <td />
                   <td>
-                    <button className="button" type="submit">
+                    <button className="btn" type="submit">
                       Update Book
                     </button>
                   </td>

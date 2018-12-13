@@ -36,6 +36,10 @@ class SelectedBook extends Component {
                     <td>{book.ISBN}</td>
                   </tr>
                   <tr>
+                    <th>Author:</th>
+                    <td>{book.author}</td>
+                  </tr>
+                  <tr>
                     <th>Year:</th>
                     <td>{book.year}</td>
                   </tr>

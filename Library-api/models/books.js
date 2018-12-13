@@ -8,7 +8,7 @@ var books = {
   },
   addbook: function(books, callback) {
     return db.query(
-      "insert into books values(?,?,?,?,?,?,?)",
+      "insert into books values(?,?,?,?,?,?,?,?)",
       [
         books.ID,
         books.ISBN,
@@ -27,7 +27,7 @@ var books = {
   },
   updatebook: function(ID, books, callback) {
     return db.query(
-      "update books set ISBN=?,title=?, year=?, description=?, image=?, rating=? where ID=?",
+      "update books set ISBN=?,title=?, year=?, description=?, author=?, image=?, rating=? where ID=?",
       [
         books.ISBN,
         books.title,
