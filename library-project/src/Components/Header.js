@@ -9,9 +9,7 @@ export default class Header extends React.Component {
           <nav role="navigation">
             <ul>
               <li className="active">
-                <a href="home" className="active">
-                  Home
-                </a>
+                <a href="../home">Home</a>
               </li>
               <li>
                 <a href="../books">Books</a>
