@@ -28,28 +28,29 @@ class SelectedBook extends Component {
       <div className="display">
         <Header />
         <div className="container">
-              <div className="ccontainer">
-              {this.state.books.map(book => (
-                <div className="cersoncontainer">
+          <div className="ccontainer">
+            {this.state.books.map(book => (
+              <div className="cersoncontainer">
                 <div className="cerson">
-                <img
+                  <img
                     className="bookcover"
                     src={book.image}
                     alt="Book Cover"
                     height="660"
                     width="440"
                   />
-                <h5>ISBN: {book.ISBN}</h5>
-                <h5>Title: {book.title}</h5>
-                <h5>Author: {book.author}</h5>
-                <h5>Year: {book.year}</h5>
-                <h5>Description:{book.description} </h5>
-                <h5>Rating:{book.rating} out of 5</h5>
-                <button className="btn styled">Add to my bookshelf</button>
+                  <br />
+                  <h5>ISBN: {book.ISBN}</h5>
+                  <h5>Title: {book.title}</h5>
+                  <h5>Author: {book.author}</h5>
+                  <h5>Year: {book.year}</h5>
+                  <h5>Description: {book.description} </h5>
+                  <h5>Rating: {book.rating} out of 5</h5>
+                  <button className="btn styled">Add to my bookshelf</button>
                 </div>
-                </div>
-              ))}
-            </div>
+              </div>
+            ))}
+          </div>
         </div>
         <Carousel />
         <Footer />

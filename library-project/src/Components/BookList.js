@@ -42,7 +42,10 @@ class BookList extends Component {
                     {book.rating} <img src={star} height="22" width="22" />
                   </h5>
                   <div className="book-link-container">
-                    <NavLink className="book-link" to={`selectedbook/${book.ID}`}>
+                    <NavLink
+                      className="book-link"
+                      to={`selectedbook/${book.ID}`}
+                    >
                       <button className="btn styled">More Information</button>
                     </NavLink>
                   </div>

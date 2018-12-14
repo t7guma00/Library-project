@@ -8,10 +8,8 @@ export default class Header extends React.Component {
         <div className="wrapper">
           <nav role="navigation">
             <ul>
-              <li className="active" onClick="setActive(this)">
-                <a href="home">
-                  Home
-                </a>
+              <li className="active">
+                <a href="../home">Home</a>
               </li>
               <li onClick="this._handleClick">
                 <a href="../books">Books</a>
