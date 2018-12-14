@@ -1,34 +1,51 @@
 import React, { Component } from "react";
 import Header from "../Components/Header";
+import imgmate from "./imgmate.jpg";
+import imgzhanna from "./imgzhanna.jpg";
+import "./About.css";
+import Footer from '../Components/Footer';
+// import imgleon from "./leonjpg";
 
 class About extends Component {
   render() {
     return (
       <div id="container">
         <Header />
-        <div id="body">
-          <br />
-          <br />
-          <p>
-            This web application has been created by three students at the Oulu
-            University of Applied Sciences located in Oulu, Finland. This
-            project is a part of our study in Information Technology. For more
-            information about us as well as previous projects you can check out
-            our GitHub pages:
-            <br />
+        <div className="dcontainer">
+          <div className="person">
+            <div className="image">
+              <img src={imgmate} width ="300"/>
+            </div>
+            <h1>Máté Gulyás</h1>
             <a href="https://github.com/t7guma00" target="_blank">
               Máté Gulyás
             </a>
-            <br />
+          </div>
+
+          <div className="person">
+            <div className="image">
+              <img src={imgzhanna} width ="300"/>
+            </div>
+            <h1>Zhanna Kresteva</h1>
             <a href="https://github.com/janecake" target="_blank">
               Zhanna Kresteva
             </a>
-            <br />
+          </div>
+
+           <div className="person">
+            <div className="image">
+              {/* <img src={imgleon} /> */}
+            </div>
+            <h1>Leon Oelen</h1>
             <a href="https://github.com/leono93" target="_blank">
               Leon Oelen
             </a>
-          </p>
+          </div>
         </div>
+        <p className="myp"> 
+          This application was created by three Oulu University of the Applied Sciences students as a part of their Bachelor Degree in Information Technology studies. This task is a part of Advanced Applications Project Module. 
+        </p>
+        <Footer />
       </div>
     );
   }
