@@ -32,7 +32,7 @@ class About extends Component {
             </a>
           </div>
 
-           <div className="person">
+           <div className="merson">
             <div className="image">
               {/* <img src={imgleon} /> */}
             </div>
