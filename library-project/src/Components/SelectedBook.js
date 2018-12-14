@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Header from "./Header";
+import Footer from "./Footer";
+import Carousel from "./Carousel";
+import "./SelectedBook.css";
 
 class SelectedBook extends Component {
   constructor(props) {
@@ -25,43 +28,31 @@ class SelectedBook extends Component {
       <div className="display">
         <Header />
         <div className="container">
-          <table className="table">
-            <thead />
-            <tbody>
+              <div className="ccontainer">
               {this.state.books.map(book => (
-                <tr key={book.ISBN}>
-                  <h2>More information about {book.title}</h2>
-                  <tr>
-                    <th>ISBN:</th>
-                    <td>{book.ISBN}</td>
-                  </tr>
-                  <tr>
-                    <th>Author:</th>
-                    <td>{book.author}</td>
-                  </tr>
-                  <tr>
-                    <th>Year:</th>
-                    <td>{book.year}</td>
-                  </tr>
-                  <tr>
-                    <th>Description:</th>
-                    <td>{book.description}</td>
-                  </tr>
-                  <tr>
-                    <th>Book Cover:</th>
-                    <td>
-                      <img src={book.image} />
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>Rating:</th>
-                    <td>{book.rating} out of 5</td>
-                  </tr>
-                </tr>
+                <div className="cersoncontainer">
+                <div className="cerson">
+                <img
+                    className="bookcover"
+                    src={book.image}
+                    alt="Book Cover"
+                    height="660"
+                    width="440"
+                  />
+                <h5>ISBN: {book.ISBN}</h5>
+                <h5>Title: {book.title}</h5>
+                <h5>Author: {book.author}</h5>
+                <h5>Year: {book.year}</h5>
+                <h5>Description:{book.description} </h5>
+                <h5>Rating:{book.rating} out of 5</h5>
+                <button className="btn styled">Add to my bookshelf</button>
+                </div>
+                </div>
               ))}
-            </tbody>
-          </table>
+            </div>
         </div>
+        <Carousel />
+        <Footer />
       </div>
     );
   }
